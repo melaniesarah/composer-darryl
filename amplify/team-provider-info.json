@@ -10,6 +10,11 @@
             "StackName": "amplify-darryl2-dev-144255",
             "StackId": "arn:aws:cloudformation:us-east-2:132748440840:stack/amplify-darryl2-dev-144255/2b3cfbd0-d041-11ea-b09e-0a123d686b08",
             "AmplifyAppId": "d2pxdc37cvcbk7"
+        },
+        "categories": {
+            "auth": {
+                "darryl282b2e781": {}
+            }
         }
     }
 }
