@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
@@ -12,12 +12,33 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello from V2</h1>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <h1>We now have Routing</h1>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/groups">
+            <Groups />
+          </Route>
+          <Route path="/multimedia">
+            <MultiMedia />
+          </Route>
+          <Route path="/appearances">
+            <GuestAppearances />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
