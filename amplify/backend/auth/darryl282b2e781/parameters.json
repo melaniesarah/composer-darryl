@@ -1,6 +1,6 @@
 {
     "identityPoolName": "darryl282b2e781_identitypool_82b2e781",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "darryl82b2e781",
     "userPoolName": "darryl282b2e781_userpool_82b2e781",
     "autoVerifiedAttributes": [
