@@ -1,0 +1,43 @@
+.film {
+    float: left; 
+    clear: both; 
+    width: 360px; 
+    padding: 0 0 0 5px; 
+    margin: 14px 0;
+}
+
+.film_pic {
+    float: left; 
+    width: 70px; 
+    height: 72px; 
+    background: #cccccc; 
+}
+
+.film_desc {
+    float: right; 
+    width: 278px; 
+}
+
+.film_desc h3 {
+    float: left; 
+    font-weight: bold; 
+    color: #ffffff; 
+    height: 28px; 
+    line-height: 28px; 
+    width: 262px; 
+    padding: 0 8px; 
+    background: #849b30; 
+    margin-bottom: 7px; 
+}
+
+a.play {
+    float: left; 
+    clear: left; 
+    padding: 0 0 0 11px; 
+    font-size: 14px; 
+    background: url(./wc_item.gif) no-repeat left center; 
+    text-decoration: none; 
+    font-weight: bold; 
+    color: #000; 
+    margin-top: 2px;  
+}

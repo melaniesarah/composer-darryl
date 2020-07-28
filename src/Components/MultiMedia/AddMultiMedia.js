@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { API, Storage } from 'aws-amplify';
-import { listTracks } from '../../graphql/queries';
 import { createTrack as createTrackMutation } from '../../graphql/mutations';
 
 const initialFormState = {
@@ -33,7 +32,7 @@ function AddMultiMedia() {
     const file = e.target.files[0];
     setFormData({ ...formData, audio: file.name });
     await Storage.put(file.name, file);
-    this.props.fetchTracks();
+    
   }
 
   return (
