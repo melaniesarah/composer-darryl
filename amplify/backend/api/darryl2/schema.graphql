@@ -1,0 +1,48 @@
+type Group @model {
+  id: ID!
+  name: String!
+  song: [Song] @connection(keyName: "byGroup", fields: ["id"])
+}
+
+type Song @model @key(name: "byGroup", fields: ["groupID"]) {
+  id: ID!
+  groupID: ID!
+  group: Group @connection(fields: ["groupID"])
+  grade: String!
+  title: String!
+  description: String
+  length: String
+  image: String
+  score: String
+  audio: [String]!
+  forSale: [InventoryItem] @connection(keyName: "bySong", fields: ["id"])
+}
+
+type InventoryItem @model @key(name: "bySong", fields: ["songID", "price"]) {
+  id: ID!
+  songID: ID!
+  song: Song @connection(fields: ["songID"])
+  price: Float!
+}
+
+type Track @model {
+  id: ID!
+  title: String!
+  description: String
+  image: String
+  audio: String!
+}
+
+type GuestAppearance @model {
+  id: ID!
+  location: String!
+  contacts: [String!]!
+}
+
+type User @model {
+  id: ID!
+  name: String!
+  userType: String!
+  email: String!
+  password: String!
+}
