@@ -1,0 +1,29 @@
+footer {
+    float: left; 
+    clear: both; 
+    width: 100%; 
+    background: #000; 
+    height: 100px; 
+}
+
+.socialmedia {
+    float: left; 
+    width: 100%; 
+    background: #000; 
+    height: 80px; 
+    padding: 20px 0 0 16px;
+}
+
+.credits {
+    float: right; 
+    clear: right; 
+    height: 60px; 
+    line-height: 60px; 
+    color: #ffffff; 
+    padding: 0 60px 0 20px; 
+    font-size: 12px; 
+}
+
+.copyright {
+    font-weight: bold;
+}
