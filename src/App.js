@@ -15,28 +15,30 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <h1>We now have Routing</h1>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/groups">
-            <Groups />
-          </Route>
-          <Route path="/multimedia">
-            <MultiMedia />
-          </Route>
-          <Route path="/appearances">
-            <GuestAppearances />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <div className="wrap">
+          <Header />
+          <h1>We now have Routing</h1>
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/groups">
+              <Groups />
+            </Route>
+            <Route path="/multimedia">
+              <MultiMedia />
+            </Route>
+            <Route path="/appearances">
+              <GuestAppearances />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
         <Footer />
       </div>
     </Router>

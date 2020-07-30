@@ -69,3 +69,8 @@ h4 {
   line-height: 0px;
   height: 20px;
 }
+
+.wrap {
+  width: 960px;
+  margin: 0 auto;
+}
