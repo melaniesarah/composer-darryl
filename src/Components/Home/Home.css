@@ -1,0 +1,143 @@
+.welcome {
+    float: left; 
+    clear: both; 
+    width: 920px; 
+    padding: 10px; 
+    height: 70px; 
+    margin: 30px 0 0 0; 
+    background: #4c4c4c;  
+}
+
+.welcome-message {
+    float: left; 
+    margin: 10px 0 12px 0; 
+}
+
+.contact-darryl {
+    float: right; margin: 10px 0 0 0; 
+}
+
+.content-left {
+    float: left; 
+    width: 605px; 
+}
+
+
+.composer-img {
+    vertical-align: unset;
+}
+
+
+.textblock p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+    line-height: unset;
+    font-size: unset;
+}
+
+.textblock .textblock2 {
+    margin-top: 18px;
+}
+
+.read-more {
+    float: right; 
+    clear: both; 
+    width: 85px; 
+    height: 21px; 
+    line-height: 21px; 
+    font-weight: bold; 
+    background: #849b30; 
+    color: #ffffff; 
+    font-size: 12px; 
+    text-align: center; 
+    margin: 15px 0 0 0; 
+}
+
+.content-right {
+    float: right; 
+    width: 240px; 
+}
+
+.performing_groups {
+    float: left; 
+    clear: both; 
+}
+
+.performing_groups li {
+    float: left; 
+    clear: both; 
+    color: #333333; 
+    font-size: 16px; 
+    padding: 0 0 0 24px; 
+    background: url(pg.gif) no-repeat left 2px; 
+    margin: 0 0 15px 0;
+}
+
+.hr {
+    float: left; 
+    clear: both; 
+    width: 100%; 
+    height: 1px; 
+    background: #cccccc; 
+    margin: 21px 0 41px 0; 
+}
+
+h3.margin20 {
+    margin: 0 0 20px 0;
+}
+
+.box1 {
+    float: left; 
+    width: 285px; 
+    margin: 0 85px 0 0;
+}
+
+.box1 .lw_item {
+    float: left; 
+    border: 4px #cccccc solid; 
+    border-width: 6px 4px;
+}
+
+.box1 .textblock {
+    float: right; 
+    width: 140px; 
+    clear: none; 
+    margin: 20px 0 0 0; 
+}
+
+.textblock a {
+    color: #333; 
+    text-decoration: underline; 
+}
+
+.box2 {
+    float: left; 
+    width: 240px; 
+}
+
+.box2 .textblock {
+    color: #666666; 
+}
+
+.box3 {
+    float: right; 
+    width: 210px; 
+}
+
+.box3 .textblock {
+    color: #666; 
+}
+
+.box3 .textblock strong {
+    color: #000000; 
+}
+
+.box3 .textblock a {
+    text-decoration: none; 
+    color: #666;
+}
+
+
+
