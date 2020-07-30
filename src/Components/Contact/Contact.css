@@ -1,0 +1,10 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 380px;
+    text-align: left;
+    font-size: 0.7em;
+    justify-content: space-evenly;
+}
+
