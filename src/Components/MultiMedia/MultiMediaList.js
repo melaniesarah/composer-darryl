@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { API, Storage } from 'aws-amplify';
 import { listTracks } from '../../graphql/queries';
-import { deleteTrack as deleteTrackMutation } from '../../graphql/mutations';
 import AddMultiMedia from './AddMultiMedia';
+import Track from './Track';
 import multimediaImage from './film_multimedia.gif';
 import './MultiMedia.css';
 
-function MultiMedia() {
+function MultiMediaList() {
   const [tracks, setTracks] = useState([]);
   const currentUser = 'Admin';
 
@@ -29,19 +29,10 @@ function MultiMedia() {
     setTracks(apiData.data.listTracks.items);
   }
 
-  async function deleteTrack({ id }) {
-    const newTracksArray = tracks.filter((track) => track.id !== id);
-    setTracks(newTracksArray);
-    await API.graphql({
-      query: deleteTrackMutation,
-      variables: { input: { id } },
-    });
-  }
-
   return (
     <div className="multimedia content">
       <div className="main-content">
-      {currentUser === 'Admin' && <AddMultiMedia />}
+        {currentUser === 'Admin' && <AddMultiMedia />}
         <h1>
           <img src={multimediaImage} alt="Film and multimedia" />
         </h1>
@@ -56,25 +47,17 @@ function MultiMedia() {
         </p>
 
         <div style={{ marginBottom: 30 }}>
-          {tracks.map((track) => (
-            <div key={track.id} className="film">
-              <div className="film_pic"></div>
-              <div class="film_desc">
-                <h3>{track.title}</h3>
-                <p className="textblock">{track.description}</p>
-                <a className="play" href={track.audio}>
-                    Play Track
-                </a>
-              </div>
-              {currentUser === 'Admin' && (
-                <button onClick={() => deleteTrack(track)}>Delete track</button>
-              )}
-            </div>
-          ))}
+          {
+            tracks.map((track) => {
+              return (
+                <Track key={track.id} track={track} />
+              );
+            })
+        }
         </div>
       </div>
     </div>
   );
 }
 
-export default MultiMedia;
+export default MultiMediaList;
