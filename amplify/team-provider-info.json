@@ -1,4 +1,22 @@
 {
+    "interm": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-darryl2-interm-154855-authRole",
+            "UnauthRoleArn": "arn:aws:iam::132748440840:role/amplify-darryl2-interm-154855-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::132748440840:role/amplify-darryl2-interm-154855-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-darryl2-interm-154855-deployment",
+            "UnauthRoleName": "amplify-darryl2-interm-154855-unauthRole",
+            "StackName": "amplify-darryl2-interm-154855",
+            "StackId": "arn:aws:cloudformation:us-east-2:132748440840:stack/amplify-darryl2-interm-154855/2d57d510-d27c-11ea-a2a8-02eb519684da",
+            "AmplifyAppId": "d13uvhaxm06lg"
+        },
+        "categories": {
+            "auth": {
+                "darryl282b2e781": {}
+            }
+        }
+    },
     "dev": {
         "awscloudformation": {
             "AuthRoleName": "amplify-darryl2-dev-144255-authRole",
