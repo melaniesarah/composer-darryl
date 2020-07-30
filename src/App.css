@@ -74,3 +74,28 @@ h4 {
   width: 960px;
   margin: 0 auto;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  text-align: left;
+  font-size: 0.7em;
+  justify-content: center;
+}
+
+.form * {
+  margin-bottom: 7px;
+}
+
+.form label,
+.form button {
+  margin-top: 10px;
+}
+
+.form button {
+  margin-bottom: 50px;
+}
+
+
+
