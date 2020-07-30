@@ -22,7 +22,7 @@ function Track(props) {
             <p className="textblock">{props.track.description}</p>
             <Link className="play"
                 to={{
-                    pathname: "/audio",
+                    pathname: "/audioplayer",
                     state: {
                         audio: props.track.audio
                     }

@@ -18,12 +18,11 @@ function App() {
       <div className="App">
         <div className="wrap">
           <Header />
-          <h1>We now have Routing</h1>
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/groups" component={Groups} />
             <Route path="/multimedia" component={MultiMediaList} />
-            <Route path="/audio" component={AudioPlayer} />
+            <Route path="/audioplayer" component={AudioPlayer} />
             <Route path="/appearances" component={GuestAppearances} />
             <Route path="/contact" component={Contact} />
             <Route exact path="/" component={Home} />
