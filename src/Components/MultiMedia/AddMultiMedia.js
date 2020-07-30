@@ -10,7 +10,6 @@ const initialFormState = {
 };
 
 function AddMultiMedia() {
-  const [tracks, setTracks] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   async function createTrack() {
@@ -23,8 +22,9 @@ function AddMultiMedia() {
       const audio = await Storage.get(formData.audio);
       formData.audio = audio;
     }
-    setTracks([...tracks, formData]);
+
     setFormData(initialFormState);
+    document.getElementsByName("file").files = null;
   }
 
   async function onChange(e) {
@@ -32,27 +32,24 @@ function AddMultiMedia() {
     const file = e.target.files[0];
     setFormData({ ...formData, audio: file.name });
     await Storage.put(file.name, file);
-    
   }
 
   return (
-    <div className="multimedia add form">
+    <div className="multimedia add form" style={{border: '1px solid black'}}>
+      <h2>Add Media</h2>
       <label for="title">Title: </label>
       <input
         name="title"
         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-        placeholder="Track title"
         value={formData.title}
       />
       <label for="description">Description: </label>
       <textArea
         name="description"
-        onChange={(e) =>
-          setFormData({ ...formData, description: e.target.value })
-        }
-        placeholder="Track description"
-        value={formData.description}
-      ></textArea>
+        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+      >
+      {formData.description}
+      </textArea>
       <label for="file">Audio: </label>
       <input type="file" name="file" onChange={onChange} />
       <button onClick={createTrack}>Add Track</button>
