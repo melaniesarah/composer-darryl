@@ -1,6 +1,7 @@
 type Group @model {
   id: ID!
   name: String!
+  title: String
   song: [Song] @connection(keyName: "byGroup", fields: ["id"])
 }
 
@@ -31,6 +32,7 @@ type Track @model {
   description: String
   image: String
   audio: String!
+  order: Int
 }
 
 type GuestAppearance @model {
