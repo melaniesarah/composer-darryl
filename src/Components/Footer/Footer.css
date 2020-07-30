@@ -1,7 +1,7 @@
 footer {
     float: left; 
     clear: both; 
-    width: 100%; 
+    width: 960px; 
     background: #000; 
     height: 100px; 
 }
