@@ -29,7 +29,21 @@ h3 {
 
 h4 {
   margin: 0 0 12px 0; 
-  font-size:110%;
+  font-size: 110%;
+}
+
+.content {
+  float: left; 
+  clear: both; 
+  width: 920px; 
+  padding: 0 20px 70px 20px; 
+  margin: 45px 0 0 0;
+}
+
+.main-content {
+  float: right; 
+  width: 673px; 
+  padding: 0 12px 0 0;
 }
 
 .textblock {
@@ -45,16 +59,13 @@ h4 {
   color: #000; 
 }
 
-.content {
-  float: left; 
-  clear: both; 
-  width: 920px; 
-  padding: 0 20px 70px 20px; 
-  margin: 45px 0 0 0;
+.gray {
+  color: #666;
 }
 
-.main-content {
-  float: right; 
-  width: 673px; 
-  padding: 0 12px 0 0;
+.clear2 {
+  clear: both;
+  display: block;
+  line-height: 0px;
+  height: 20px;
 }
