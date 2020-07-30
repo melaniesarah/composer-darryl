@@ -6,6 +6,8 @@ import youtubeLogo from './youtube1.png';
 import './Footer.css';
 
 function Footer() {
+    const date = new Date();
+    const currentYear = date.getFullYear();
     return (
         <footer>
             <div className="socialmedia">
@@ -22,7 +24,7 @@ function Footer() {
                     <img src={youtubeLogo} alt="Youtube logo" width="64" />
                 </a>
                 <div className="credits">
-                    <p className="copyright">&nbsp;&nbsp;&nbsp;Copyright &copy; 2020</p>
+    <p className="copyright">&nbsp;&nbsp;&nbsp;Copyright &copy; {currentYear}</p>
                 </div>
             </div>
         </footer>
