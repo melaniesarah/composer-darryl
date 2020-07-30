@@ -47,9 +47,8 @@ function Header() {
             <NavLink to="/about">
               <img src={AboutImage} alt="About" />
             </NavLink>
-            <div className="has-submenu">
+            <button className="has-submenu">
               <img src={GroupsImage} alt="Performing <br /> Groups" />
-              
               <div className="submenu">
                 <NavLink to="/groups/wind">Wind Band</NavLink>
                 <NavLink to="/groups/orchestra">Orchestra</NavLink>
@@ -57,7 +56,8 @@ function Header() {
                 <NavLink to="/groups/chamber">Chamber Ensembles</NavLink>
                 <NavLink to="/groups/marching">Marching Band</NavLink>
               </div>
-            </div>
+            </button>
+
             <NavLink to="/multimedia">
               <img src={MediaImage} alt="Film &#38; <br /> Media" />
             </NavLink>
