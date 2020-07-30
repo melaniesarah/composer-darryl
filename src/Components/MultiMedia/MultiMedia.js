@@ -40,8 +40,8 @@ function MultiMedia() {
 
   return (
     <div className="multimedia content">
-      {currentUser === 'Admin' && <AddMultiMedia />}
       <div className="main-content">
+      {currentUser === 'Admin' && <AddMultiMedia />}
         <h1>
           <img src={multimediaImage} alt="Film and multimedia" />
         </h1>
