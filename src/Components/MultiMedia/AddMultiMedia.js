@@ -37,19 +37,24 @@ function AddMultiMedia() {
 
   return (
     <div className="multimedia add form">
+      <label for="title">Title: </label>
       <input
+        name="title"
         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
         placeholder="Track title"
         value={formData.title}
       />
+      <label for="description">Description: </label>
       <textArea
+        name="description"
         onChange={(e) =>
           setFormData({ ...formData, description: e.target.value })
         }
         placeholder="Track description"
         value={formData.description}
       ></textArea>
-      <input type="file" onChange={onChange} />
+      <label for="file">Audio: </label>
+      <input type="file" name="file" onChange={onChange} />
       <button onClick={createTrack}>Add Track</button>
     </div>
   );
