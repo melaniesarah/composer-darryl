@@ -11,11 +11,14 @@ type Song @model @key(name: "byGroup", fields: ["groupID"]) {
   group: Group @connection(fields: ["groupID"])
   grade: String!
   title: String!
-  description: String
+  description: String!
   length: String
-  image: String
+  duration: Float
+  image: String!
   score: String
-  audio: [String]!
+  audio: [String]
+  order: Int!
+  price: [Int]
   forSale: [InventoryItem] @connection(keyName: "bySong", fields: ["id"])
 }
 

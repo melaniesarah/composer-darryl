@@ -14,6 +14,14 @@
         "categories": {
             "auth": {
                 "darryl282b2e781": {}
+            },
+            "function": {
+                "darryl282b2e781CustomMessage": {
+                    "REDIRECTURL": "https://darryl2.com",
+                    "EMAILSUBJECT": "You have been authorized!",
+                    "EMAILMESSAGE": "congrats"
+                },
+                "darryl282b2e781PreAuthentication": {}
             }
         }
     },

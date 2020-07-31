@@ -1,12 +1,10 @@
 {
-    "identityPoolName": "darryl282b2e781_identitypool_82b2e781",
-    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "darryl82b2e781",
     "userPoolName": "darryl282b2e781_userpool_82b2e781",
     "autoVerifiedAttributes": [
         "email"
     ],
-    "mfaConfiguration": "OFF",
+    "mfaConfiguration": "OPTIONAL",
     "mfaTypes": [
         "SMS Text Message"
     ],
@@ -23,16 +21,42 @@
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
+        "address",
+        "birthdate",
+        "family_name",
+        "middle_name",
+        "gender",
+        "locale",
+        "given_name",
+        "name",
+        "nickname",
+        "phone_number",
+        "preferred_username",
+        "picture",
+        "profile",
+        "updated_at",
+        "website",
+        "zoneinfo",
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+        "address",
+        "email",
+        "family_name",
+        "locale",
+        "name",
+        "phone_number",
+        "preferred_username",
+        "picture",
+        "website",
+        "email_verified",
+        "phone_number_verified"
     ],
     "userpoolClientLambdaRole": "darryl82b2e781_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
+    "userpoolClientSetAttributes": true,
     "sharedId": "82b2e781",
     "resourceName": "darryl282b2e781",
-    "authSelections": "identityPoolAndUserPool",
+    "authSelections": "userPoolOnly",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -45,7 +69,41 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "userPoolGroupList": [],
-    "dependsOn": []
+    "useDefault": "manual",
+    "userPoolGroupList": [
+        "admin",
+        "verified",
+        "registered",
+        "guest"
+    ],
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "darryl282b2e781CustomMessage",
+            "triggerProvider": "Cognito",
+            "attributes": [
+                "Arn",
+                "Name"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "darryl282b2e781PreAuthentication",
+            "triggerProvider": "Cognito",
+            "attributes": [
+                "Arn",
+                "Name"
+            ]
+        }
+    ],
+    "userPoolGroups": true,
+    "adminQueries": true,
+    "triggers": "{\"CustomMessage\":[\"verification-link\"],\"PreAuthentication\":[\"custom\"]}",
+    "hostedUI": false,
+    "adminQueryGroup": "admin",
+    "verificationBucketName": "darryl282b2e781verificationbucket",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": []
 }
