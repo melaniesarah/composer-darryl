@@ -11,6 +11,7 @@ import GuestAppearances from './Components/GuestAppearances/GuestAppearances';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import './App.css';
+import { Auth } from 'aws-amplify';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <div className="wrap">
           <Header />
           <Switch>
+            <Route path="/auth" component={Auth} />
             <Route path="/about" component={About} />
             <Route path="/groups" component={Groups} />
             <Route path="/multimedia" component={MultiMediaList} />
@@ -34,4 +36,4 @@ function App() {
   );
 }
 
-export default withAuthenticator(App);
+export default App;
