@@ -81,16 +81,16 @@ export default class AddSong extends Component {
         const file = files[0];
         //const newStoredFile = await Storage.put(file.name, file);
 
-        if (name === 'score' || name === 'image') {
-            formData[name] = newStoredFile;
+        // if (name === 'score' || name === 'image') {
+        //     formData[name] = newStoredFile;
             
-        } else {
-            // get file number from key
-            const index = name.split("-")[1];
-            console.log("audio index is: " + index);
-            formData.audio[index] = newStoredFile;
+        // } else {
+        //     // get file number from key
+        //     const index = name.split("-")[1];
+        //     console.log("audio index is: " + index);
+        //     formData.audio[index] = newStoredFile;
             
-        }
+        // }
 
         this.setState({ formData });
     }
