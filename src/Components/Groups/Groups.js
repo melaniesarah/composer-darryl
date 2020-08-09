@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { API, Storage } from 'aws-amplify';
+import { API } from 'aws-amplify';
 import { useRouteMatch } from 'react-router-dom';
-import { createGroup as createGroupMutation } from '../../graphql/mutations';
-//import { createSong as createSongMutation } from '../../graphql/mutations';
-//import { createInventoryItem as createInventoryMutation } from '../../graphql/mutations';
-import { listGroups, listSongs, listInventoryItems } from '../../graphql/queries';
-
-// const initialFormState = {
-//   name: ''
-// };
+import { listGroups } from '../../graphql/queries';
+import SongsList  from './SongsList';
 
 function Groups() {
   const [groups, setGroups] = useState([]);
-  // const [formData, setFormData] = useState(initialFormState);
+  const [group, setGroup] = useState({});
 
   const match = useRouteMatch('/groups/:groupName');
   const groupName = match.params.groupName;
@@ -20,7 +14,7 @@ function Groups() {
   useEffect(() => {
     fetchGroups();
   }, []);
-
+  
   async function fetchGroups() {
     const apiData = await API.graphql({ query: listGroups });
     const groupsFromAPI = apiData.data.listGroups.items;
@@ -28,26 +22,38 @@ function Groups() {
       groupsFromAPI.map(async (group) => {
         return group;
       })
-    );
-    setGroups(apiData.data.listGroups.items);
-  }
-
-  async function createGroup() {
-    await API.graphql({
-      query: createGroupMutation,
-      variables: { input: {name: groupName} },
+      );
+      setGroups(apiData.data.listGroups.items);
+    }
+    
+      
+      useEffect(() => {
+        getGroup();
+      });
+    
+    function getGroup() {
+      const currentGroup = groups.filter(group => {
+      return group.name === groupName;
     });
+    console.log({...currentGroup[0]});
+    setGroup(currentGroup[0]);
   }
-  
 
+  
   return (
     <div className="groups content">
-      <button name={groupName} onClick={createGroup}>
-        Create group {groupName}
-      </button>
-      {groups.map(group => {
-        return <h1 key={group.id}>{group.name}</h1>
+      {groups.map((group) => {
+        return (
+          <div key={group.id} className="groups main-content">
+            <h2>{group.name}</h2>
+            <h3>{group.id}</h3>
+          </div>
+        );
       })}
+
+      <SongsList group={group} />
+
+      
     </div>
   );
 }
