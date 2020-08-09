@@ -10,14 +10,14 @@ import AudioPlayer from './Components/AudioPlayer/AudioPlayer';
 import GuestAppearances from './Components/GuestAppearances/GuestAppearances';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
-import { appearances } from './Components/GuestAppearances/moveDB';
+// import { appearances } from './Components/GuestAppearances/moveDB';
 
 import './App.css';
 
 
-import { createGuestAppearance as createGuestAppearanceMutation } from "./graphql/mutations.js";
+//import { createGuestAppearance as createGuestAppearanceMutation } from "./graphql/mutations.js";
 //import * as queries from './src/graphql/queries';
-import { API, graphqlOperation, Auth } from "aws-amplify";
+//import { API, graphqlOperation, Auth } from "aws-amplify";
 
 function App() {
   return (
@@ -42,15 +42,15 @@ function App() {
   );
 }
 
-const cryptoRandomString = require('crypto-random-string');
-appearances.forEach(async (entry) => {
-  let appearance = entry;
-  let id = cryptoRandomString({ length: 25, type: 'url-safe' });
-  const newAppearance = API.graphql(
-    graphqlOperation(createGuestAppearanceMutation, {
-      input: { id, ...appearance },
-    })
-  );
-});
+// const cryptoRandomString = require('crypto-random-string');
+// appearances.forEach(async (entry) => {
+//   let appearance = entry;
+//   let id = cryptoRandomString({ length: 25, type: 'url-safe' });
+//   const newAppearance = API.graphql(
+//     graphqlOperation(createGuestAppearanceMutation, {
+//       input: { id, ...appearance },
+//     })
+//   );
+// });
 
 export default App;
