@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { API, Storage } from 'aws-amplify';
-import { listTracks } from '../../graphql/queries';
+//import { API, Storage } from 'aws-amplify';
+//import { listTracks } from '../../graphql/queries';
 import AddMultiMedia from './AddMultiMedia';
 import Track from './Track';
 import multimediaImage from './film_multimedia.gif';
@@ -15,18 +15,18 @@ function MultiMediaList() {
   }, []);
 
   async function fetchTracks() {
-    const apiData = await API.graphql({ query: listTracks });
-    const tracksFromAPI = apiData.data.listTracks.items;
-    await Promise.all(
-      tracksFromAPI.map(async (track) => {
-        if (track.audio) {
-          const audio = await Storage.get(track.audio);
-          track.audio = audio;
-        }
-        return track;
-      })
-    );
-    setTracks(apiData.data.listTracks.items);
+    // const apiData = await API.graphql({ query: listTracks });
+    // const tracksFromAPI = apiData.data.listTracks.items;
+    // await Promise.all(
+    //   tracksFromAPI.map(async (track) => {
+    //     if (track.audio) {
+    //       const audio = await Storage.get(track.audio);
+    //       track.audio = audio;
+    //     }
+    //     return track;
+    //   })
+    // );
+    // setTracks(apiData.data.listTracks.items);
   }
 
   return (

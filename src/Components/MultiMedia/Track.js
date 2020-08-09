@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import { API } from 'aws-amplify';
-import { deleteTrack as deleteTrackMutation } from '../../graphql/mutations';
+//import { deleteTrack as deleteTrackMutation } from '../../graphql/mutations';
 
 
 function Track(props) {
