@@ -1,8 +1,8 @@
 // import { createGuestAppearance as createGuestAppearanceMutation } from "../../graphql/mutations";
-import config from '../../aws-exports';
+// import config from '../../aws-exports';
 // import * as queries from './src/graphql/mutations.js';
-import { API, graphqlOperation } from "aws-amplify";
-API.configure(config);
+// import { API, graphqlOperation } from "aws-amplify";
+// API.configure(config);
 
 
 export const appearances = [

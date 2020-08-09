@@ -26,7 +26,7 @@ function App() {
         <div className="wrap">
           <Header />
           <Switch>
-            <Route path="/auth" component={Auth} />
+            {/* <Route path="/auth" component={Auth} /> */}
             <Route path="/about" component={About} />
             <Route path="/groups" component={Groups} />
             <Route path="/multimedia" component={MultiMediaList} />

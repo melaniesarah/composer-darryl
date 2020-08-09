@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { API } from 'aws-amplify';
+// import { API } from 'aws-amplify';
 import { deleteTrack as deleteTrackMutation } from '../../graphql/mutations';
 
 
@@ -8,10 +8,10 @@ function Track(props) {
     const currentUser = "Admin";
 
     const deleteTrack = async ({ id }) => {
-        await API.graphql({
-            query: deleteTrackMutation,
-            variables: { input: { id } },
-        });
+        // await API.graphql({
+        //     query: deleteTrackMutation,
+        //     variables: { input: { id } },
+        // });
     };
 
     return (

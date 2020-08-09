@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { API, Storage } from 'aws-amplify';
-import { createSong as createSongMutation } from '../../graphql/mutations';
+//import { API, Storage } from 'aws-amplify';
+//import { createSong as createSongMutation } from '../../graphql/mutations';
 
 export default class AddSong extends Component {
     constructor(props) {
@@ -45,15 +45,15 @@ export default class AddSong extends Component {
             
         console.log(`form data prior to API call for new song: ${{...formData}}`);
         
-        try {
-            const newSong = await API.graphql({   // here is an example of both query and variables being passed
-                query: createSongMutation,
-                variables: { input: this.state.formData },
-            });
-            console.log({...newSong});
-        } catch (err) {
-            console.log(err.message);
-        }
+        // try {
+        //     const newSong = await API.graphql({   // here is an example of both query and variables being passed
+        //         query: createSongMutation,
+        //         variables: { input: this.state.formData },
+        //     });
+        //     console.log({...newSong});
+        // } catch (err) {
+        //     console.log(err.message);
+        // }
         
         // this.setState({
         //     numAudioFiles: 1,
@@ -79,7 +79,7 @@ export default class AddSong extends Component {
         if (!files[0]) return;
 
         const file = files[0];
-        const newStoredFile = await Storage.put(file.name, file);
+        //const newStoredFile = await Storage.put(file.name, file);
 
         if (name === 'score' || name === 'image') {
             formData[name] = newStoredFile;

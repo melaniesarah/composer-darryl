@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { API } from 'aws-amplify';
+//import { API } from 'aws-amplify';
 import { useRouteMatch } from 'react-router-dom';
-import { listGroups } from '../../graphql/queries';
+//import { listGroups } from '../../graphql/queries';
 import SongsList  from './SongsList';
 
 function Groups() {
@@ -16,14 +16,14 @@ function Groups() {
   }, []);
   
   async function fetchGroups() {
-    const apiData = await API.graphql({ query: listGroups });
-    const groupsFromAPI = apiData.data.listGroups.items;
-    await Promise.all(
-      groupsFromAPI.map(async (group) => {
-        return group;
-      })
-      );
-      setGroups(apiData.data.listGroups.items);
+    // const apiData = await API.graphql({ query: listGroups });
+    // const groupsFromAPI = apiData.data.listGroups.items;
+    // await Promise.all(
+    //   groupsFromAPI.map(async (group) => {
+    //     return group;
+    //   })
+    //   );
+    //   setGroups(apiData.data.listGroups.items);
     }
     
       

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { API, Storage } from 'aws-amplify';
-import { createTrack as createTrackMutation } from '../../graphql/mutations';
+// import { API, Storage } from 'aws-amplify';
+// import { createTrack as createTrackMutation } from '../../graphql/mutations';
 
 const initialFormState = {
   title: '',
@@ -14,10 +14,10 @@ function AddMultiMedia() {
 
   async function createTrack() {
     if (!formData.title || !formData.description || !formData.audio) return;
-    await API.graphql({
-      query: createTrackMutation,
-      variables: { input: formData },
-    });
+    // await API.graphql({
+    //   query: createTrackMutation,
+    //   variables: { input: formData },
+    // });
     if (formData.audio) {
       const audio = await Storage.get(formData.audio);
       formData.audio = audio;

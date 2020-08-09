@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { API, Storage } from 'aws-amplify';
-import { listSongs } from '../../graphql/queries';
+// import { API, Storage } from 'aws-amplify';
+// import { listSongs } from '../../graphql/queries';
 import AddSong from './AddSong';
       
 
@@ -19,19 +19,19 @@ function SongsList(props) {
 
     async function fetchSongs() {
 
-        const apiData = await API.graphql({ 
-            query: listSongs,
-            variables: {
-                filter: {nextToken: state.group.songs.nextToken}
-            }
-         });
-        const songsFromAPI = apiData.data.listSongs.items;
-        await Promise.all(
-            songsFromAPI.map(async (song) => {
-           return song;
-        })
-      );
-      setSongs(apiData.data.listSongs.items);
+    //     const apiData = await API.graphql({ 
+    //         query: listSongs,
+    //         variables: {
+    //             filter: {nextToken: state.group.songs.nextToken}
+    //         }
+    //      });
+    //     const songsFromAPI = apiData.data.listSongs.items;
+    //     await Promise.all(
+    //         songsFromAPI.map(async (song) => {
+    //        return song;
+    //     })
+    //   );
+    //   setSongs(apiData.data.listSongs.items);
     }
     
 
